@@ -13,5 +13,5 @@ User program:
 The user module attempts to read the entire record (duration is given to runme.sh as an argument) from the kernel module at single read command and waits. The kernel module copies the recorded numbers to the read buffer after filling 1/4th of the array.
 
 Granularity:
-The program consumes two threads that do not get blocked unless the scheduler forces them to. Blocking causes the recording threads unable to do their work for up to 10ms, which is the solaris scheduler tick.
+The program consumes two threads that do not get blocked unless the scheduler forces them to. Blocking causes the recording threads unable to do their work for up to 10ms, which is the solaris scheduler tick. Busy polling with two threads is not a problem as the SPARC CPUs have 128+ hardware threads.
 
